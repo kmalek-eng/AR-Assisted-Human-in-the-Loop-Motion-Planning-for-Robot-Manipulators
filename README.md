@@ -34,6 +34,24 @@ The following scripts provide high-level commands for moving the Kinova Gen3 arm
 
 The remaining MATLAB files are primarily components from the Kinova MATLAB/Simulink packages used for robot communication and control.
 
+### Communication layer and current repository status
+
+The MATLAB workflow communicates with the HoloLens through a local SQL database hosted with XAMPP. Several PHP scripts provide the data-transfer layer between MATLAB, the database, and the HoloLens application. The main endpoints used by the MATLAB code include:
+
+- `selectnewest.php`
+- `insert.php`
+- `insert4.php`
+- `insert5.php`
+- `insert6.php`
+- `selectdecision.php`
+- `selectnew_moving_point.php`
+
+These scripts handle operations such as receiving pose and obstacle data from the HoloLens, sending planned-path and robot-state data back to the HoloLens, and exchanging user decisions and moving-point data through the database.
+
+The PHP scripts and database configuration are not currently included in this repository. As a result, the complete MATLAB-HoloLens communication workflow cannot run from the repository alone.
+
+The `Python` folder contains earlier development files and is not part of the current functional implementation.
+
 ## AR positioning uncertainty
 
 An experiment was performed to measure errors caused by manually aligning holographic gripper poses with physical objects. Users aligned the holographic gripper with 3D-printed replicas of the robot end-effector placed at different positions and orientations, and these poses were then used to guide the robot.
