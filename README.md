@@ -24,4 +24,3 @@ An experiment was performed to measure errors caused by manually aligning hologr
 
 The mean positioning error was 1.0 mm in the tool-frame X direction with a standard deviation of 5.1 mm, and -1.2 mm in the Y direction with a standard deviation of 4.5 mm.
 
-https://github.com/kmalek-eng/AR-Assisted-Human-in-the-Loop-Motion-Planning-for-Robot-Manipulators/issues/1#issue-5603177136
