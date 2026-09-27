@@ -66,28 +66,28 @@ while true
     end
 end
 % Connecting to robot
-tic;
-while true
-    Simulink.importExternalCTypes(which('kortex_wrapper_data.h'));
-    gen3Kinova = kortex();
-    %gen3Kinova.ip_address = '172.31.99.235';
-    gen3Kinova.ip_address = '192.168.1.10'; %Manual ip address
-    gen3Kinova.user = 'admin';
-    gen3Kinova.password = 'admin';
-    isOk = gen3Kinova.CreateRobotApisWrapper();
-    if isOk
-       disp('You are connected to the robot!'); 
-       break;
-    else
-        webwrite(infor_to_db, jsonencode(struct('robo', 'y', 'motion', 'n', 'IK', 'n')));
-        pause(5);
-        webwrite(infor_to_db, jsonencode(struct('robo', 'n', 'motion', 'n', 'IK', 'n')));
-        disp('Failed to connect to the robot. Still trying to connect!');
-    if toc>120
-        error('Failed to establish a valid connection!');
-    end
-    end
-end
+% tic;
+% while true
+%     Simulink.importExternalCTypes(which('kortex_wrapper_data.h'));
+%     gen3Kinova = kortex();
+%     %gen3Kinova.ip_address = '172.31.99.235';
+%     gen3Kinova.ip_address = '192.168.1.10'; %Manual ip address
+%     gen3Kinova.user = 'admin';
+%     gen3Kinova.password = 'admin';
+%     isOk = gen3Kinova.CreateRobotApisWrapper();
+%     if isOk
+%        disp('You are connected to the robot!'); 
+%        break;
+%     else
+%         webwrite(infor_to_db, jsonencode(struct('robo', 'y', 'motion', 'n', 'IK', 'n')));
+%         pause(5);
+%         webwrite(infor_to_db, jsonencode(struct('robo', 'n', 'motion', 'n', 'IK', 'n')));
+%         disp('Failed to connect to the robot. Still trying to connect!');
+%     if toc>120
+%         error('Failed to establish a valid connection!');
+%     end
+%     end
+% end
 ind=1;
 %%
 while true
